@@ -57,7 +57,7 @@
                 <label class="form-label" for="exampleInputEmail1" style="font-weight: 600;">Commentaire: </label>Lorem ipsum
 
               </div>
-        <form action="{{ route('comment') }}">
+        <form action="{{ route('p2-1.comment') }}">
             <div class="mb-3">
 
                 <label class="form-label" for="exampleInputEmail1" style="font-weight: 600;">Laisser un commentaire</label>

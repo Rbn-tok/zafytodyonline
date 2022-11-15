@@ -64,7 +64,7 @@ class P2Controller extends Controller
 
     }
 
-    public function comment(Request $request){
+    public function p2_1_comment(Request $request){
         $datas = $request->all();
 /*
         $first_name = $request->input('first_name');
