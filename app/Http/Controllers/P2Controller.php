@@ -6,6 +6,7 @@ use App\Models\File;
 use App\Models\P2;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class P2Controller extends Controller
 {
@@ -54,5 +55,26 @@ class P2Controller extends Controller
             ->with('file', $fileName);
         }
 
+    }
+
+
+    public function p2_1_view(){
+
+        return view('p2-1-view');
+
+    }
+
+    public function comment(Request $request){
+        $datas = $request->all();
+/*
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $city_name = $request->input('city_name');
+*/
+        $cmt = $datas['commentaire'];
+
+        $commentaires=array("id_user"=>Auth::id(),"commentaire"=>$cmt);
+        DB::table('commentaire')->insert($commentaires);
+        return back();
     }
 }

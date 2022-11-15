@@ -40,7 +40,7 @@ class P3Controller extends Controller
             //$fileModel->id_user=Auth::id();
             $fileModel->nom_fichier = '_'.$req->file->getClientOriginalName();
             $fileModel->stockage = '/storage/' . $filePath;
-            $p2->
+
             $fileModel->save();
 
 

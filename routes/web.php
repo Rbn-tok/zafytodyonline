@@ -199,8 +199,12 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
 
 
      /*upload test file*/
-     Route::get('upload-file', [P2Controller::class,'index'])->name('upload.file');
-     Route::post('upload-file', [P2Controller::class,'postP2'])->name('file.upload.post');
+     Route::get('p2-create', [P2Controller::class,'index'])->name('upload.file');
+     Route::post('p2-poste', [P2Controller::class,'postP2'])->name('file.upload.post');
+
+
+    Route::get('p2-1/view', [P2Controller::class,'p2_1_view'])->name('p2-1.view');
+    Route::get('comment', [P2Controller::class,'comment'])->name('comment');
 
     Route::get('startup', [StartupController::class, 'index'])->name('startup');
     Route::post('post-startup', [StartupController::class, 'postStartup'])->name('startup.post');
