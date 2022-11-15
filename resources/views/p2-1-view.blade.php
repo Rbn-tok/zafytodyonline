@@ -58,6 +58,7 @@
 
               </div>
         <form action="{{ route('p2-1.comment') }}">
+            @csrf
             <div class="mb-3">
 
                 <label class="form-label" for="exampleInputEmail1" style="font-weight: 600;">Laisser un commentaire</label>
