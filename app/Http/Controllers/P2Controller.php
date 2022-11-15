@@ -37,14 +37,16 @@ class P2Controller extends Controller
         $fileModel = new File();
         $p2=new P2();
         if($req->file()) {
-            $fileName = '_'.$req->file->getClientOriginalName();
+            $fileName = time().'_'.$req->file->getClientOriginalName();
 
             $filePath = $req->file('file')->storeAs('uploads', $fileName, 'public');
-            //$fileModel->id_user=Auth::id();
-            $fileModel->nom_fichier = '_'.$req->file->getClientOriginalName();
+            $fileModel->id_user=Auth::id();
+            $fileModel->nom_fichier = time().'_'.$req->file->getClientOriginalName();
             $fileModel->stockage = '/storage/' . $filePath;
-            $p2->
+
             $fileModel->save();
+
+
 
 
             return back()
