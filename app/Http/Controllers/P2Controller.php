@@ -74,7 +74,51 @@ class P2Controller extends Controller
         $cmt = $datas['commentaire'];
 
         //code phase
+        $code_phase="p2-1";
+
+        $commentaires=array("id_user"=>Auth::id(),"commentaire"=>$cmt,"code_phase"=>$code_phase);
+        DB::table('commentaire')->insert($commentaires);
+        return back();
+    }
+    public function p2_2_view(){
+
+        return view('p2-2-view');
+
+    }
+
+    public function p2_2_comment(Request $request){
+        $datas = $request->all();
+/*
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $city_name = $request->input('city_name');
+*/
+        $cmt = $datas['commentaire'];
+
+        //code phase
         $code_phase="p2-2";
+
+        $commentaires=array("id_user"=>Auth::id(),"commentaire"=>$cmt,"code_phase"=>$code_phase);
+        DB::table('commentaire')->insert($commentaires);
+        return back();
+    }
+    public function p2_3_view(){
+
+        return view('p2-3-view');
+
+    }
+
+    public function p2_3_comment(Request $request){
+        $datas = $request->all();
+/*
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $city_name = $request->input('city_name');
+*/
+        $cmt = $datas['commentaire'];
+
+        //code phase
+        $code_phase="p2-3";
 
         $commentaires=array("id_user"=>Auth::id(),"commentaire"=>$cmt,"code_phase"=>$code_phase);
         DB::table('commentaire')->insert($commentaires);
