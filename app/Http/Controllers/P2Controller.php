@@ -73,7 +73,10 @@ class P2Controller extends Controller
 */
         $cmt = $datas['commentaire'];
 
-        $commentaires=array("id_user"=>Auth::id(),"commentaire"=>$cmt);
+        //code phase
+        $code_phase="p2-2";
+
+        $commentaires=array("id_user"=>Auth::id(),"commentaire"=>$cmt,"code_phase"=>$code_phase);
         DB::table('commentaire')->insert($commentaires);
         return back();
     }
