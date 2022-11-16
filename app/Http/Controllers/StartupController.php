@@ -13,7 +13,7 @@ class StartupController extends Controller
 
         return view('p1');
 
-    }  
+    }
     public function postStartup(Request $request )
     {
         $request->validate([
@@ -23,7 +23,7 @@ class StartupController extends Controller
         $id = $data['user_id'];
         $bla=User::where('id',$id)->first();
        $check = $this->create($data);
-    }  
+    }
     public function create(array $data)
 
 		{
@@ -33,8 +33,8 @@ class StartupController extends Controller
 		$odd = implode("|", $data['odd']);
 		$fond = implode("|", $data['fond']);
 		  return Startup::create([
-			
-			
+
+
 		    'nom' => $data['nom'],
 		    'id_user' => $id,
 		    'site_web' => $data['site_web'],
@@ -52,4 +52,9 @@ class StartupController extends Controller
 		  ]);
 
 		}
+        public function listStartup(){
+            $startup=Startup::all();
+
+            return view('list-startup', compact('startup'));
+        }
 }

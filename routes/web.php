@@ -242,8 +242,14 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
     Route::get('/p4-3-view', [P4Controller::class,'p4_3_view'])->name('p4-3.view');
     Route::get('p4-3-comment', [P4Controller::class,'p4_3_comment'])->name('p4-3.comment');
 
+
+    //startup
     Route::get('startup', [StartupController::class, 'index'])->name('startup');
     Route::post('post-startup', [StartupController::class, 'postStartup'])->name('startup.post');
+    //list-startup
+    Route::get('list-startup', [StartupController::class, 'listStartup'])->name('startup.list');
+
+
     Route::get('projet', [ProjectController::class, 'index'])->name('projet');
     Route::post('post-projet', [ProjectController::class, 'postProjet'])->name('projet.post');
     Route::get('p1', [P1Controller::class, 'index'])->name('p1');
