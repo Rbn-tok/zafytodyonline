@@ -204,6 +204,10 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
      Route::get('p2-create', [P2Controller::class,'index'])->name('upload.file');
      Route::post('p2-poste', [P2Controller::class,'postP2'])->name('file.upload.post');
 
+
+    //p2-1 upload
+      Route::post('p2-1-poste', [P2Controller::class,'postP2_1'])->name('file.upload.post');
+
     //p2-1
     Route::get('/p2-1-view', [P2Controller::class,'p2_1_view'])->name('p2-1.view');
     Route::get('p2-1-comment', [P2Controller::class,'p2_1_comment'])->name('p2-1.comment');
