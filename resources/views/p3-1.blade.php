@@ -10,7 +10,7 @@
       <div class="bgc-white p-20 bd">
         <h3 class="c-grey-900">Définir le contexte</h3>
         <p>descriptif concept Zafy Tody</p>
-        
+
       </div>
     </div>
     <div class="masonry-item col-md-12">
@@ -54,8 +54,8 @@
       </div>
     </div>
 
-    
-    
-    
+
+
+
 
 @endsection

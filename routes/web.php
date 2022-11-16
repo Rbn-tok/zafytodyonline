@@ -9,6 +9,8 @@ use App\Http\Controllers\P2Controller;
 use App\Http\Controllers\P3Controller;
 use App\Http\Controllers\P4Controller;
 use App\Http\Controllers\P5Controller;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -203,7 +205,7 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
      Route::post('p2-poste', [P2Controller::class,'postP2'])->name('file.upload.post');
 
     //p2-1
-    Route::get('p2-1-view', [P2Controller::class,'p2_1_view'])->name('p2-1.view');
+    Route::get('/p2-1-view', [P2Controller::class,'p2_1_view'])->name('p2-1.view');
     Route::get('p2-1-comment', [P2Controller::class,'p2_1_comment'])->name('p2-1.comment');
 
     //p2-2
@@ -214,21 +216,31 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
     Route::get('/p2-3-view', [P2Controller::class,'p2_3_view'])->name('p2-3.view');
     Route::get('p2-3-comment', [P2Controller::class,'p2_3_comment'])->name('p2-3.comment');
 
-    //p3-1
-    Route::get('/p3-1-view', [P2Controller::class,'p3_1_view'])->name('p3-1.view');
-    Route::get('p3-1-comment', [P2Controller::class,'p3_1_comment'])->name('p3-1.comment');
+
 
     //p3-1
-    Route::get('/p3-1-view', [P2Controller::class,'p3_1_view'])->name('p3-1.view');
-    Route::get('p3-1-comment', [P2Controller::class,'p3_1_comment'])->name('p3-1.comment');
+    Route::get('/p3-1-view', [P3Controller::class,'p3_1_view'])->name('p3-1.view');
+    Route::get('p3-1-comment', [P3Controller::class,'p3_1_comment'])->name('p3-1.comment');
+
+    //p3-2
+    Route::get('/p3-2-view', [P3Controller::class,'p3_2_view'])->name('p3-2.view');
+    Route::get('p3-2-comment', [P3Controller::class,'p3_2_comment'])->name('p3-2.comment');
 
     //p3-3
-    Route::get('/p3-2-view', [P2Controller::class,'p3_2_view'])->name('p3-2.view');
-    Route::get('p3-2-comment', [P2Controller::class,'p3_2_comment'])->name('p3-2.comment');
+    Route::get('/p3-3-view', [P3Controller::class,'p3_3_view'])->name('p3-3.view');
+    Route::get('p3-3-comment', [P3Controller::class,'p3_3_comment'])->name('p3-3.comment');
 
-    //p4
-     Route::get('/p4-2-view', [P2Controller::class,'p3_2_view'])->name('p3-2.view');
-     Route::get('p3-2-comment', [P2Controller::class,'p3_2_comment'])->name('p3-2.comment');
+    //p4-1
+     Route::get('/p4-1-view', [P4Controller::class,'p4_1_view'])->name('p4-1.view');
+     Route::get('p4-1-comment', [P4Controller::class,'p4_1_comment'])->name('p4-1.comment');
+
+     //p4-2
+     Route::get('/p4-2-view', [P4Controller::class,'p4_2_view'])->name('p4-2.view');
+     Route::get('p4-2-comment', [P4Controller::class,'p4_2_comment'])->name('p4-2.comment');
+
+    //p4-2
+    Route::get('/p4-3-view', [P4Controller::class,'p4_3_view'])->name('p4-3.view');
+    Route::get('p4-3-comment', [P4Controller::class,'p4_3_comment'])->name('p4-3.comment');
 
     Route::get('startup', [StartupController::class, 'index'])->name('startup');
     Route::post('post-startup', [StartupController::class, 'postStartup'])->name('startup.post');
