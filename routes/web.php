@@ -215,7 +215,7 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
     //p2-3
     Route::get('/p2-3-view', [P2Controller::class,'p2_3_view'])->name('p2-3.view');
     Route::get('p2-3-comment', [P2Controller::class,'p2_3_comment'])->name('p2-3.comment');
-
+    Route::post('p2-3-poste', [P2Controller::class,'postP2_3'])->name('file.upload.postP2-3');
 
 
     //p3-1
